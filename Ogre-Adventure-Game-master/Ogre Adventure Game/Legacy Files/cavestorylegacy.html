@@ -1,0 +1,45 @@
+<!-- This is a comment in HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Set the title (appears in browser tab) of the game. -->
+	<title>Deep Cave</title>
+	<!-- Tell the browser to read in the CSS properties -->
+	<link rel="stylesheet" type="text/css" href="cave.css">
+	<!-- Tell the browser to read all the JavaScript files -->
+	<script src="deepCave.js"></script>
+	<script src="armorRoom.js"></script>
+	<script src="witchRoom.js"></script>
+	<script src="weaponRoom.js"></script>
+	<script src="tunnel.js"></script>
+	<script src="ogreRoom.js"></script>
+</head>
+<body>
+	<!-- Create a division to hold the title of our game. -->
+	<div class="titlePanel">
+		<!-- This is the title -->
+		<h1>Deep Cave</h1>
+
+	</div>
+	<!-- Create a division to hold the inventory for the game -->
+	<div class="inventoryPanel">
+		
+	
+		<!-- Create a heading for the inventory section -->
+		<h3>Inventory</h1>
+		<!-- This is the paragraph that will keep the inventory list -->
+		<p id="InventoryList"></p>
+	</div>
+	<!-- Create a division to hold the story panel for the game -->
+	<div class="storyPanel">
+		<!-- Create a paragraph where the story will be told -->
+		<p id="RoomDesc">
+			<!-- This is the HTML that is used when our game starts. -->
+			<a href='#' onclick='deepCave()'>
+				Click here
+			</a>
+			to start the game.
+		</p>
+	</div>
+</body>
+</html>

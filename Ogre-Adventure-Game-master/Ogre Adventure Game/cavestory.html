@@ -1,0 +1,68 @@
+<!-- This is a comment in HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Set the title (appears in browser tab) of the game. -->
+	<title>Deep Cave</title>
+	<!-- Tell the browser to read in the CSS properties -->
+	<link rel="stylesheet" type="text/css" href="cave.css">
+	<!-- Tell the browser to read all the JavaScript files -->
+	<script src="Js/deepCave.js"></script>
+	<script src="Js/armorRoom.js"></script>
+	<script src="Js/witchRoom.js"></script>
+	<script src="Js/weaponRoom.js"></script>
+	<script src="Js/tunnelRoom.js"></script>
+	<script src="Js/ogreRoom.js"></script>
+	<script src="Js/armor.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="game">
+			<!-- Create a division to hold the title of our game. -->
+			<div class="titlePanel">
+				<!-- This is the title and a graphic -->
+				<h1>Deep Cave</h1>
+			<!--	<img src='decoArt.png' alt="Deco Art Squiggle">-->
+			</div>
+			<!-- Create a division to hold the inventory for the game -->
+			<div class="inventoryPanel">
+				<!-- Display a picture for our game -->
+				<!--<img id="RoomPic" src="picture_doorway.jpg" alt="Room Picture" width="200">
+				<!-- Create a heading for the inventory section -->
+				<h3>Inventory</h1>
+				<!-- Put graphic under the word inventory -->
+				<!--<img src="decoInventory.png" alt="Inventory squiggle" width="150">
+				<!-- This is the paragraph that will keep the inventory list -->
+				<p id="inventoryList"></p>
+				<p id="item1"></p>
+				<p id="item2"></p>
+				<p id="item3"></p>
+			</div>
+			<!-- Create a division to hold the story panel for the game -->
+			<div class="storyPanel">
+				<!-- Create a paragraph where the story will be told -->
+				<p id="RoomDesc">
+					<!-- This is the HTML that is used when our game starts. -->
+					<a href='#' onclick='deepCave()'>
+						Click here
+					</a>
+					to start the game.
+				</p>
+				<p id="puzzleDesc">
+				</p>
+			</div>
+				
+			</div>
+			<div id="art">
+				<pre id="pre">
+	###### #    #   ##   #    # #####  #      ######
+	#       #  #   #  #  ##  ## #    # #      #      
+	#####    ##   #    # # ## # #    # #      ##### 
+	#        ##   ###### #    # #####  #      #      
+	#       #  #  #    # #    # #      #      #      
+	###### #    # #    # #    # #      ###### #####
+				</pre>
+			</div>
+	</div>
+</body>
+</html>
