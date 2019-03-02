@@ -1,0 +1,85 @@
+/* CSS for Adventure Game */
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup */
+.popuptext {
+    visibility: hidden;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    padding-right: 8px;
+	  padding-left: 8px;
+	  line-height: 125%;
+    position: absolute;
+    z-index: 1;
+  	top: 15px;
+}
+
+.asciiClass {
+  padding: 30px;
+}
+
+.asciiButton {
+   cursor: pointer;
+}
+
+#asciiStart {
+  visibility: hidden;
+}
+
+
+#container {
+	display: grid;
+  	grid-template-columns: 1fr 1fr 1fr 1fr;
+  	grid-template-rows: 200px 200px 200px 200px;
+  	grid-template-areas:
+  	'gm gm art art'
+  	'gm gm art art'
+	  'gm gm art art'
+	  'gm gm art art'
+}
+
+#game {
+	grid-area: gm;
+	width:100%;
+  }
+
+#art {
+	grid-area: art;
+	float: left;
+	width:100%;
+}
+
+
+body {
+	background-image: url(background.png);
+
+}
+
+.titlePanel {
+	display: block;
+	text-align: center;
+	width: 700px;
+}
+
+.inventoryPanel {
+	display: block;
+	margin: auto;
+	margin-right: 50px;
+	width: 200px;
+	float: left;
+	text-align: center;
+}
+
+.storyPanel {
+	display: block;
+	width: 450px;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+	float: left;
+}

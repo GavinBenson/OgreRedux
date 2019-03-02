@@ -1,0 +1,7 @@
+You wake up in a cave
+
+There are 3 pathways, one north, one east, one west
+
+North leads to ogre room (final boss), and alcove (puzzle solution).
+East leads to puzzle staircase, then puzzle room, then armor room
+West leads to witch room which has potion.
