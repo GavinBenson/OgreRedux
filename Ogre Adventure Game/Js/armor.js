@@ -16,7 +16,7 @@ var armor = {
 					"Armor" +
 				"</a>" +
 				"<span id='armorMenuId' class='popuptext'>" +
-					"<u onclick='armor.examine()'>" +
+					"<u onclick='object.examine()'>" +
 						"Examine" +
 					"</u>";
 		// GET option is in the popup menu if the armor is on the

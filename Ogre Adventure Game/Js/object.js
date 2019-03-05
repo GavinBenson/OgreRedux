@@ -1,51 +1,46 @@
 /* object */
+
+var tempObject;
 var object = {
 	// Create a variable to track the location of the object.
 	// Valid values are: hook, inventory, body
-	location:'',
 
 	// object MENU CREATE
 	menuCreate: function(obj) {
-
 		if (obj == 'armor') {
-
-			var objTemp = {
-				location:'skeleton'
-			}
-		} else if (obj == 'sword') {
-			location:'chest'
+			var armor = {
+				location: 'skeleton'
+			}	//var	tempObject = eval(obj);
 		} else {
-			location:'witch'
-			console.log(obj);
-		}
 
-		console.log('object.menuCreate');
-		console.log('   location = ' + this.location);
+		}
+	  console.log('Step 1 if. Location (should be skeleton) now set to = ' + armor.location);
+
 		// Store the HTML for the object's popup menu in a variable
 		// EXAMINE option is always in the popup menu
 		menu =
 			"<span id='objectLinkId' class='popup'>" +
-				"<a href='#' onclick='object.menuDisplay()'>" +
+				"<a href='#' onclick='object.menuDisplay(\""+obj+"\")'>" +
 					"object" +
 				"</a>" +
 				"<span id='objectMenuId' class='popuptext'>" +
-					"<u onclick='object.examine()'>" +
+					"<u onclick='object.examine(\""+obj+"\")'>" +
 						"Examine" +
 					"</u>";
 		// GET option is in the popup menu if the object is on the
-		if (objTemp.location == 'skeleton') {
+		if (eval(obj).location == 'skeleton') {
 			console.log('worked');
-
+			console.log();
 			menu = menu +
 					"<br>" +
-					"<u onclick='object.get()'>" +
+					"<u onclick='object.get(\""+obj+"\")>" +
 						"Get" +
 					"</u>" +
 				"</span>" +
 			"</span>";
 		}
 		// DROP and PUT ON are options if the object is in the inventory
-		else if (this.location == 'inventory') {
+		else if (armor.location == 'inventory') {
 			menu = menu +
 					"<br>" +
 					"<u onclick='object.putOn()'>" +
@@ -55,7 +50,7 @@ var object = {
 			"</span>";
 		}
 		// DISROBE is an option if the object is on the body
-		else if (this.location == 'body'){
+		else if (armor.location == 'body'){
 			menu = menu +
 					"<br>" +
 					"<u onclick='object.takeOff()'>" +
@@ -75,7 +70,7 @@ var object = {
 
 	// object MENU DISPLAY
 	menuDisplay: function () {
-		console.log('object.menuDisplay');
+		console.log('tempt.menuDisplay');
 		// Make the browser display the popup menu
 		popup = document.getElementById('objectMenuId');
 		popup.style.visibility = 'visible';
@@ -83,15 +78,24 @@ var object = {
 
 	// EXAMINE
 	examine: function () {
+		if (obj == 'armor') {
+			detail =
+				"<p>The object appears to be a once" +
+				"beautiful piece, covered now in scorch " +
+				"marks and deep gouges from years of" +
+				"service. It isn't much, but is" +
+				"definently better than nothing." +
+				"</p>";
+		} else if (obj == 'sword') {
+
+		} else if (obj == 'potion') {
+
+		} else {
+
+		}
 		console.log('object.examine');
 		// Store HTML to describe the object in a variable
-		detail =
-			"<p>The object appears to be a once" +
-			"beautiful piece, covered now in scorch " +
-			"marks and deep gouges from years of" +
-			"service. It isn't much, but is" +
-			"definently better than nothing." +
-			"</p>";
+
 
 		// Hide the object menu popup menu
 		popup = document.getElementById('objectMenuId');
@@ -104,10 +108,11 @@ var object = {
 
 	// GET
 	get: function() {
+
 		console.log('object.get');
 		// Change the object location
-		objTemp.location = 'inventory';
-		console.log('double worked');
+		eval(obj).location = 'inventory';
+		console.log(eval(obj).location);
 
 		// Hide the object popup menu
 		popup = document.getElementById('objectMenuId');
@@ -115,7 +120,7 @@ var object = {
 
 		// Recreate the object popup menu to hold appropriate options
 		popup = document.getElementById('objectLinkId');
-		popup.innerHTML = object.menuCreate();
+		popup.innerHTML = armor.menuCreate();
 
 		// Store the HTML to describe the action of getting the object
 		detail = "<p>You take the object from the disgruntled skeletal man. " +
@@ -124,7 +129,7 @@ var object = {
 				/* "<a href='#' onclick='examineCave()'>room</a>" +
 				 " you awoke in." +*/
 				 "</p>";
-		document.getElementById("item1").innerHTML = object.menuCreate();
+		document.getElementById("item1").innerHTML = armor.menuCreate();
 
 
 		// Make the browser display the HTML
@@ -137,7 +142,7 @@ var object = {
 		console.log('object.putOn');
 
 		// Change the locaton of the object
-		this.location = 'body';
+		armor.location = 'body';
 
 		// Hide the object popup menu
 		popup = document.getElementById('objectMenuId');
@@ -178,4 +183,4 @@ var object = {
 		roomPara = document.getElementById('RoomDesc');
 		roomPara.innerHTML = roomPara.innerHTML + detail;
 	}
-};
+}

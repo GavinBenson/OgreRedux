@@ -5,6 +5,9 @@ var button1 = 'Serpent';
 var button2 = 'Witch';
 var button3 = 'Ogre';
 var submitButton = 'Submit';
+var armor = {
+	location: 'skeleton'
+}
 //VAR STACK
 
 var armorRoom = {
@@ -172,10 +175,12 @@ var puzzleRoom = {
 
 		armorRoom: function() {
 			console.log('armorSideRoom');
+			var a = 'armor';
 			var description =
 			"<p>" +
 			"Upon entering the room a muddled white figure catches your eye. To the right appears to be a long dead adventurer. Nothing but a " +
-			"skeleton remains of the poor soul. The skeleton is wearing a full suit of bloodied " + armor.menuCreate() + "." +
+			"skeleton remains of the poor soul. The skeleton is wearing a full suit of bloodied" +
+		  "<a href='#' onclick='object.menuCreate(\""+a+"\")'>opening</a>." +
 			"</p>";
 
 			roomPara = document.getElementById("RoomDesc");

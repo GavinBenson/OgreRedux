@@ -19,20 +19,20 @@ function ogreRoom()
 
 	roomPara = document.getElementById("desc");
 	roomPara.innerHTML = description;
-	
+
 }
 
 
 // TEMP OBJECTS
-/*var potion = 
+/*var potion =
 {
 	location: 'inventory'
 }
-var armor = 
+var armor =
 {
 	location: 'inventory'
 }
-var weapon = 
+var weapon =
 {
 	location: 'inventory'
 }
@@ -117,7 +117,7 @@ function potionBattle()
 		roomPara.innerHTML = description;
 	}
 	if (battleStage == 2)
-	{	
+	{
 		description = "<p>You chose the wrong choice and died. Press 'F5' to refresh and start over.</p>";
 		roomPara = document.getElementById("desc");
 		roomPara.innerHTML = description;
@@ -148,21 +148,3 @@ function exit()
 	roomPara = document.getElementById("desc2")
 	roomPara.innerHTML = description;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
