@@ -1,46 +1,56 @@
 /* object */
 
-var tempObject;
 var object = {
+
+
+
 	// Create a variable to track the location of the object.
 	// Valid values are: hook, inventory, body
 
 	// object MENU CREATE
 	menuCreate: function(obj) {
+
+		var location = "";
+
+		var name = "";
+
+		
+
+
 		if (obj == 'armor') {
-			var armor = {
-				location: 'skeleton'
-			}	//var	tempObject = eval(obj);
+			this.name = "armor",
+			this.location = "skeleton"
+				//var	tempObject = eval(obj);
 		} else {
 
 		}
-	  console.log('Step 1 if. Location (should be skeleton) now set to = ' + armor.location);
+	  console.log('Step 1 if. Location (should be skeleton) now set to = ' + this.location);
 
 		// Store the HTML for the object's popup menu in a variable
 		// EXAMINE option is always in the popup menu
 		menu =
 			"<span id='objectLinkId' class='popup'>" +
-				"<a href='#' onclick='object.menuDisplay(\""+obj+"\")'>" +
+				"<a href='#' onclick='object.menuDisplay(\""+this.name+"\")'>" +
 					"object" +
 				"</a>" +
 				"<span id='objectMenuId' class='popuptext'>" +
-					"<u onclick='object.examine(\""+obj+"\")'>" +
+					"<u onclick='object.examine(\""+this.name+"\")'>" +
 						"Examine" +
 					"</u>";
 		// GET option is in the popup menu if the object is on the
-		if (eval(obj).location == 'skeleton') {
+		if (this.location == 'skeleton') {
 			console.log('worked');
 			console.log();
 			menu = menu +
 					"<br>" +
-					"<u onclick='object.get(\""+obj+"\")>" +
+					"<u onclick='object.get()>" +
 						"Get" +
 					"</u>" +
 				"</span>" +
 			"</span>";
 		}
 		// DROP and PUT ON are options if the object is in the inventory
-		else if (armor.location == 'inventory') {
+		else if (this.location == 'inventory') {
 			menu = menu +
 					"<br>" +
 					"<u onclick='object.putOn()'>" +
@@ -50,7 +60,7 @@ var object = {
 			"</span>";
 		}
 		// DISROBE is an option if the object is on the body
-		else if (armor.location == 'body'){
+		else if (this.location == 'body'){
 			menu = menu +
 					"<br>" +
 					"<u onclick='object.takeOff()'>" +
@@ -69,16 +79,16 @@ var object = {
 	},
 
 	// object MENU DISPLAY
-	menuDisplay: function () {
+	menuDisplay: function() {
 		console.log('tempt.menuDisplay');
 		// Make the browser display the popup menu
-		popup = document.getElementById('objectMenuId');
+		popup = document.getElementById(this.name+"menuID");
 		popup.style.visibility = 'visible';
 	},
 
 	// EXAMINE
 	examine: function () {
-		if (obj == 'armor') {
+		if (this.name == "armor") {
 			detail =
 				"<p>The object appears to be a once" +
 				"beautiful piece, covered now in scorch " +
@@ -86,9 +96,9 @@ var object = {
 				"service. It isn't much, but is" +
 				"definently better than nothing." +
 				"</p>";
-		} else if (obj == 'sword') {
+		} else if (this.name == 'sword') {
 
-		} else if (obj == 'potion') {
+		} else if (this.name == 'potion') {
 
 		} else {
 
@@ -98,7 +108,7 @@ var object = {
 
 
 		// Hide the object menu popup menu
-		popup = document.getElementById('objectMenuId');
+		popup = document.getElementById(this.name+"menuID");
 		popup.style.visibility = 'hidden';
 
 		// Make the browser display the HTML
@@ -111,16 +121,16 @@ var object = {
 
 		console.log('object.get');
 		// Change the object location
-		eval(obj).location = 'inventory';
-		console.log(eval(obj).location);
+		this.location = 'inventory';
+		console.log(this.location);
 
 		// Hide the object popup menu
-		popup = document.getElementById('objectMenuId');
+		popup = document.getElementById(this.name+"menuID");
 		popup.style.visibility = 'hidden';
 
 		// Recreate the object popup menu to hold appropriate options
-		popup = document.getElementById('objectLinkId');
-		popup.innerHTML = armor.menuCreate();
+		popup = document.getElementById(this.name+"LinkID");
+		popup.innerHTML = this.menuCreate();
 
 		// Store the HTML to describe the action of getting the object
 		detail = "<p>You take the object from the disgruntled skeletal man. " +
@@ -129,7 +139,7 @@ var object = {
 				/* "<a href='#' onclick='examineCave()'>room</a>" +
 				 " you awoke in." +*/
 				 "</p>";
-		document.getElementById("item1").innerHTML = armor.menuCreate();
+		document.getElementById("item1").innerHTML = this.name.menuCreate();
 
 
 		// Make the browser display the HTML
