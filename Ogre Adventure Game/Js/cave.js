@@ -37,7 +37,7 @@ var cave = {
       "<a href='#' onclick='witchRoom()'>opening</a>, "+
       " covered in moss. There are cracked and broken stone pillars around the entrance. "+
       "You can hear a faint cackling and screaming coming from the room. "+
-			"<a href='#' onclick='object.menuCreate(\""+a+"\")'>opening</a>, "+
+			object.menuCreate(a) +
 			"</p>"
 		roomPara = document.getElementById("RoomDesc");
 		roomPara.innerHTML =  description;

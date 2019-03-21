@@ -28,15 +28,21 @@ var object = {
 
 		// Store the HTML for the object's popup menu in a variable
 		// EXAMINE option is always in the popup menu
+		var a = this.name+"LinkId";
+		var b = this.name+"MenuId";
+		console.log(a);
+		console.log(b);
+
 		menu =
-			"<span id='objectLinkId' class='popup'>" +
+			"<span id=\""+a+"\" class='popup'>" +
 				"<a href='#' onclick='object.menuDisplay(\""+this.name+"\")'>" +
-					"object" +
+					"Armor" +
 				"</a>" +
-				"<span id='objectMenuId' class='popuptext'>" +
+				"<span id=\""+b+"\" class='popuptext'>" +
 					"<u onclick='object.examine(\""+this.name+"\")'>" +
 						"Examine" +
 					"</u>";
+		console.log(menu);
 		// GET option is in the popup menu if the object is on the
 		if (this.location == 'skeleton') {
 			console.log('worked');
@@ -80,9 +86,12 @@ var object = {
 
 	// object MENU DISPLAY
 	menuDisplay: function() {
+		var men = this.name+"MenuId";
 		console.log('tempt.menuDisplay');
 		// Make the browser display the popup menu
-		popup = document.getElementById(this.name+"menuID");
+		popup = document.getElementById(men);
+		console.log(popup);
+		console.log(men);
 		popup.style.visibility = 'visible';
 	},
 
@@ -108,7 +117,7 @@ var object = {
 
 
 		// Hide the object menu popup menu
-		popup = document.getElementById(this.name+"menuID");
+		popup = document.getElementById(this.name+"MenuId");
 		popup.style.visibility = 'hidden';
 
 		// Make the browser display the HTML
